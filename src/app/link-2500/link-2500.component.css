@@ -1,0 +1,44 @@
+.main {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Link-Terminal {
+    display: block;
+    min-height: 488px;
+    min-width: 265px;
+
+    max-width: 100%;
+    max-height: 100%;
+    /* this prevent the img from scaling */
+    height: 488px; 
+    width: 265px;
+    object-fit: contain;
+}
+app-link-2500-screen{
+
+    position: absolute;
+    min-width: 176px;
+    min-height: 135px;
+    /* Positioning relative to the image using percentages */
+    top: 106px;      /* distance from top of image */
+    left: 45px;   /* distance from left of image */
+
+    width: 176px;    /* width relative to image width */
+    height: 135px;   /* height relative to image height */
+
+
+    max-width: 100%;
+    max-height: 100%;
+
+    background-color: brown; /* your overlay */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+}
