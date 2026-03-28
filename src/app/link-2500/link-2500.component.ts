@@ -8,23 +8,30 @@ import { Link2500ScreenComponent } from "./link-2500-screen/link-2500-screen.com
   styleUrl: './link-2500.component.css'
 })
 export class Link2500Component implements AfterViewInit{
-
+// try to find teh scale at which the picture grew by for example if the height of the pic is 10 and it went up to 100 the scale would be 10 which i can use to multiple the screen with
   
   @ViewChild('linkImg') linkImg!: ElementRef;
   @ViewChild('linkScreen', {read: ElementRef}) linkScreen!: ElementRef;
   @ViewChild('main') main!: ElementRef;
+  // @ViewChild('screenArea') screenArea!: ElementRef;
+
   DefaultLinkScreenWidth  !: number
   DefaultLinkScreenHeight !: number
   DefaultLinkScreenLeft   !: number
   DefaultLinkScreenTop    !: number
+
+  // DefaultScreenAreaTop   : number = 272 // 272 px
+  // DefaultScreenAreaTop:
+
+  
   ngAfterViewInit(): void {
     this.DefaultLinkScreenWidth  = this.linkScreen.nativeElement.offsetWidth
     this.DefaultLinkScreenHeight = this.linkScreen.nativeElement.offsetHeight
     this.DefaultLinkScreenLeft   = this.linkScreen.nativeElement.getBoundingClientRect().left
     this.DefaultLinkScreenTop    = this.linkScreen.nativeElement.getBoundingClientRect().top
 
-    this.getLinkScreenLeft()
-    this.getLinkScreenTop()
+    // this.getLinkScreenLeft()
+    // this.getLinkScreenTop()
 
     // const img = this.linkImg.nativeElement;
     // if (img.complete) {
@@ -48,7 +55,13 @@ export class Link2500Component implements AfterViewInit{
     
 
   }
+  // screen size
+  // width: 176px;    /* width relative to image width */
+  // height: 135px;   /* height relative to image height */
 
+  //og images size:
+  // min-height: 488px;
+  // min-width: 265px;
   onImageLoad() {
     const width  = this.linkImg.nativeElement.getBoundingClientRect().width; // to get the og width
     const height = this.linkImg.nativeElement.getBoundingClientRect().height;// to get the og height
@@ -98,9 +111,9 @@ export class Link2500Component implements AfterViewInit{
   }
   @HostListener('window:resize')
   onResize() {
-    // console.log(this.getTest())
-    this.getLinkScreenLeft()
-    this.getLinkScreenTop()
+    console.log(this.getTest())
+    // this.getLinkScreenLeft()
+    // this.getLinkScreenTop()
     // console.log(this.getLinkScreenLeft())
     // console.log(this.getLinkScreenTop())
   }
