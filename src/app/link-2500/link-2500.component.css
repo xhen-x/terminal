@@ -28,8 +28,8 @@
     max-width: 90vw;
     width: auto;
     height: auto;
-    height: 488px;
-    width: 265px;
+    /* height: 488px;
+    width: 265px; */
 }
 
 .Terminal-area{
@@ -38,10 +38,8 @@
     width: 100%;
     top: 0%;
     left: 0%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    display: grid;
+    justify-items: center;
 }
 app-link-2500-screen{
     
@@ -51,19 +49,29 @@ app-link-2500-screen{
     justify-content: center;
     align-items: center;
 
-    margin-top: 29%;
+    margin-top: 39%;
     height: 28.2%;
     width: 67%;
 
 
 
 }
+.Terminal-Pin-Pad{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    align-items: flex-end;
+}
 
 app-link-2500-pinpad{
     width: 100%;
-    height: 41%;
+    height: 33%;
     display: flex;
     justify-content: center;
+    margin-bottom: 19%;
     /* margin-left: 10%;
     margin-right: 11%; */
 }
