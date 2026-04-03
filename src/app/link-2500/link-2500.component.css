@@ -24,11 +24,12 @@
     min-width: 265px;
 
 
-    max-height: 99vh;         /* ✅ scales down on small screens */
-    max-width: 100vw;
+    max-height: 90vh;         /* ✅ scales down on small screens */
+    max-width: 90vw;
     width: auto;
     height: auto;
-    
+    height: 488px;
+    width: 265px;
 }
 
 .Terminal-area{
@@ -39,7 +40,8 @@
     left: 0%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-evenly;
 }
 app-link-2500-screen{
     
@@ -49,11 +51,19 @@ app-link-2500-screen{
     justify-content: center;
     align-items: center;
 
-    margin-left: 17%;
-    margin-top: 37.5%;
-    margin-right: 16.6%;
+    margin-top: 29%;
     height: 28.2%;
+    width: 67%;
 
 
 
+}
+
+app-link-2500-pinpad{
+    width: 100%;
+    height: 41%;
+    display: flex;
+    justify-content: center;
+    /* margin-left: 10%;
+    margin-right: 11%; */
 }

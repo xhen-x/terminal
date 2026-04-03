@@ -1,9 +1,10 @@
 import { AfterViewInit, Component, ElementRef, HostListener, viewChild, ViewChild, ViewChildren } from '@angular/core';
 import { Link2500ScreenComponent } from "./link-2500-screen/link-2500-screen.component";
+import { Link2500PinpadComponent } from "./link-2500-pinpad/link-2500-pinpad.component"
 
 @Component({
   selector: 'app-link-2500',
-  imports: [Link2500ScreenComponent],
+  imports: [Link2500ScreenComponent, Link2500PinpadComponent],
   templateUrl: './link-2500.component.html',
   styleUrl: './link-2500.component.css'
 })
