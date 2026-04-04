@@ -112,7 +112,7 @@ export class Link2500Component implements AfterViewInit{
   }
   @HostListener('window:resize')
   onResize() {
-    console.log(this.getTest())
+    // console.log(this.getTest())
     // this.getLinkScreenLeft()
     // this.getLinkScreenTop()
     // console.log(this.getLinkScreenLeft())
