@@ -1,7 +1,8 @@
 .pinpad-main{
+    height: 42.5%;
+}
+.pinpad-container{
     height: 100%;
-    display: flex;
-    justify-content: space-evenly;
 }
 
 .F-container{
@@ -9,33 +10,23 @@
     justify-content: space-evenly;
 }
 .num-container{
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
+    height: 76%;
     align-items: center;
-    height: 100%;
+    margin-top: 3%;
 }
-.row-1{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 5%;
+.num-container div button{
+    min-width: 42px;
+    min-height: 26px;
+    width: 17%;
+    margin-left: 5%;
+    height: 2%;
 }
 
-.row-1 button{
-    width: 10%;
-}
-.row-2{
-    width: 100%;
+.num-container div{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
-.row-3{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-.row-4{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
+
+
