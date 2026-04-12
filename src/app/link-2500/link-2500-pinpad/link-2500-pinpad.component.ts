@@ -16,7 +16,17 @@ export class Link2500PinpadComponent {
     console.log(this.ButtonInput)
 
     if (this.ButtonInput.includes('2634')) {
-      console.log("this worked")
+      console.log("2634 worrking")
+      this.ButtonInput = ""
+    }
+
+    if (this.ButtonInput.includes('0000')) {
+      console.log("0000 is working")
+      this.ButtonInput = ""
+    }
+
+    if (this.ButtonInput.includes('0001')) {
+      console.log("0001 is working")
       this.ButtonInput = ""
     }
 
@@ -26,7 +36,7 @@ export class Link2500PinpadComponent {
   this.clearTimer = setTimeout(() => {
     this.ButtonInput = ""
     console.log('input cleared!')
-  }, 2000)
+  }, 1500)
   }
 
   
