@@ -41,7 +41,7 @@
     display: grid;
     justify-items: center;
 }
-app-link-2500-screen{
+router-outlet{
     
     background-color: brown; /* your overlay */
     color: white;

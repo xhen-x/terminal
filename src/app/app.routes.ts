@@ -4,6 +4,8 @@ import { Link2500Component } from './link-2500/link-2500.component';
 export const routes: Routes = [
     {
         path: 'Link-2500',
-        component: Link2500Component
+        component: Link2500Component,
+        loadChildren: () => import('./link-2500/link-2500.routes')
+                        .then(m => m.Screen_Routes)  // ← loads child routes
     }
 ];
