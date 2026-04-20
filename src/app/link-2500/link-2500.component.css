@@ -41,21 +41,6 @@
     display: grid;
     justify-items: center;
 }
-router-outlet{
-    
-    background-color: brown; /* your overlay */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-top: 37.4%;
-    height: 28.6%;
-    width: 67%;
-
-
-
-}
 .Terminal-Pin-Pad{
     position: absolute;
     height: 100%;

@@ -1,4 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { Link2500PinpadService } from './link-2500-pinpad.service';
 
 @Component({
   selector: 'app-link-2500-pinpad',
@@ -7,36 +9,30 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrl: './link-2500-pinpad.component.css'
 })
 export class Link2500PinpadComponent {
+
+  constructor(private pinpadService : Link2500PinpadService){
+
+  }
+
   @ViewChild("numButton") numButton !: ElementRef
-
-  ButtonInput : String = ""
   private clearTimer: any
+
   onClick(value: string){
-    this.ButtonInput = this.ButtonInput + value
-    console.log(this.ButtonInput)
-
-    if (this.ButtonInput.includes('2634')) {
-      console.log("2634 worrking")
-      this.ButtonInput = ""
-    }
-
-    if (this.ButtonInput.includes('0000')) {
-      console.log("0000 is working")
-      this.ButtonInput = ""
-    }
-
-    if (this.ButtonInput.includes('0001')) {
-      console.log("0001 is working")
-      this.ButtonInput = ""
-    }
-
+    this.pinpadService.addNumber(value);
+    console.log("pinpad component: ", this.pinpadService.getValue())
     clearTimeout(this.clearTimer)
 
-  // start a fresh timer
-  this.clearTimer = setTimeout(() => {
-    this.ButtonInput = ""
-    console.log('input cleared!')
-  }, 1500)
+    this.clearTimer = setTimeout(()=>{
+      this.onClear()
+    },1500)
+  }
+
+  onClear() {
+    this.pinpadService.clear();
+  }
+
+  onBackspace() {
+    this.pinpadService.backspace();
   }
 
   

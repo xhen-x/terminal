@@ -1,0 +1,3 @@
+4/17/26
+
+- i have added the routes for link-2500-screen and i might need to make another routes on F menu to be able to see all the other tab

@@ -1,8 +1,16 @@
 import { Routes } from '@angular/router';
-import { Link2500ScreenComponent } from './link-2500-screen/link-2500-screen.component';
+import { HomeComponent } from './link-2500-screen/Home/Home.component';
+import { FMenuComponent } from './link-2500-screen/F-menu/F-menu.component';
 
-export const Screen_Routes: Routes = [
+//this is going to be the master routes list
+export const Home_Routes: Routes = [
     {
-        path:'', component:Link2500ScreenComponent
-    }
+        path:'', component:HomeComponent, pathMatch:"full",
+        
+    },
+    { 
+        path: 'F-menu', component: FMenuComponent,
+        loadChildren: () => import('./link-2500-screen/F-menu/F-menu.routes') // this will load the link 2500 routes when they enter link 2500
+                        .then(m => m.Main_Menu_Routes)  // ← will let link-2500 routes to take control
+    },  
 ];

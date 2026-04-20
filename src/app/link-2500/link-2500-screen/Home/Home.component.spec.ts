@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Link2500ScreenComponent } from './link-2500-screen.component';
+import { HomeComponent } from './Home.component';
 
-describe('Link2500ScreenComponent', () => {
-  let component: Link2500ScreenComponent;
-  let fixture: ComponentFixture<Link2500ScreenComponent>;
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Link2500ScreenComponent]
+      imports: [HomeComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Link2500ScreenComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

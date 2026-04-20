@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FMenuComponent } from './f-menu.component';
+import { FMenuComponent } from './F-menu.component';
 
 describe('FMenuComponent', () => {
   let component: FMenuComponent;
