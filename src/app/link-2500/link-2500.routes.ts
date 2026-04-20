@@ -9,7 +9,7 @@ export const Home_Routes: Routes = [
         
     },
     { 
-        path: 'F-menu', component: FMenuComponent,
+        path: 'F-menu',
         loadChildren: () => import('./link-2500-screen/F-menu/F-menu.routes') // this will load the link 2500 routes when they enter link 2500
                         .then(m => m.Main_Menu_Routes)  // ← will let link-2500 routes to take control
     },  
