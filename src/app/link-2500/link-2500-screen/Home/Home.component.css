@@ -1,7 +1,7 @@
 :host {
     position: absolute;
-    background-color: brown; /* your overlay */
-    color: white;
+    background-color: white; /* your overlay */
+    font-size: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@
     width: 67%;
 }
 p{
-    color: cyan;
+    color: black;
 }
 .Main-screen{
     height: auto;

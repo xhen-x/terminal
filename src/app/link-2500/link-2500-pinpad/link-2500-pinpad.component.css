@@ -1,32 +1,43 @@
 .pinpad-main{
-    height: 42.5%;
+    height: 41.5%;
 }
 .pinpad-container{
-    height: 100%;
+    height: 84%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .F-container{
-    display: flex;
-    justify-content: space-evenly;
-}
-.num-container{
     display: grid;
-    flex-wrap: wrap;
-    height: 76%;
-    align-items: center;
-    margin-top: 3%;
+    height: 7%;
+    width: 74%;
+    /* this is going to be the size of the button */
+    grid-template-columns: 17% 17% 17% 17%;
+    column-gap: 10.5%;
+    
 }
-.num-container div button{
-    min-width: 42px;
-    min-height: 26px;
-    width: 17%;
-    margin-left: 5%;
-    height: 2%;
+.F-container button{
+    background-color: transparent;
+    color: white;
 }
 
-.num-container div{
-    display: flex;
-    justify-content: center;
+.num-container{
+    display: grid;
+    /* this is going to be the size of the button */
+    grid-template-rows: 19% 19% 19% 19%; 
+    grid-template-columns: 21% 21% 21% 21%;
+    height: 84%;
+    width: 80%;
+    row-gap: 7.5%;
+    column-gap: 5.5%;
 }
+
+.num-container button{
+    background-color: transparent;
+    color: white;
+}
+
 
 
