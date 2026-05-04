@@ -2,9 +2,6 @@
     position: absolute;
     background-color: brown; /* your overlay */
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     margin-top: 37.4%;
     height: 28.6%;
