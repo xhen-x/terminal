@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FMenuComponent } from './f-menu.component';
+import { OptionButtonComponent } from './option-button.component';
 
-describe('FMenuComponent', () => {
-  let component: FMenuComponent;
-  let fixture: ComponentFixture<FMenuComponent>;
+describe('OptionButtonComponent', () => {
+  let component: OptionButtonComponent;
+  let fixture: ComponentFixture<OptionButtonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FMenuComponent]
+      imports: [OptionButtonComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FMenuComponent);
+    fixture = TestBed.createComponent(OptionButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

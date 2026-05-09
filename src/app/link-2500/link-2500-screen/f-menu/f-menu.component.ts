@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Link2500PinpadService } from '../../link-2500-pinpad/link-2500-pinpad.service';
 import { Subscription } from 'rxjs';
 import { Router } from "@angular/router";
-import { RouterOutlet } from "@angular/router";
 import { HeaderComponent } from "../../../header/header.component";
 
 @Component({
   selector: 'app-F-menu',
-  imports: [RouterOutlet,HeaderComponent],
+  imports: [HeaderComponent],
   templateUrl: './F-menu.component.html',
   styleUrl: './F-menu.component.css'
 })

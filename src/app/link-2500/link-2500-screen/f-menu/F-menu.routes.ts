@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { FMenuComponent } from './F-menu.component';
+import { FMenuComponent } from './f-menu.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 
 export const Main_Menu_Routes: Routes = [
