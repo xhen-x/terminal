@@ -14,8 +14,9 @@ export class OptionButtonComponent {
   @Input() route: string ='';
   @Input() bgcolor: string='';
 
-
+  
   onClick(){
+    console.log("in button ", this.route)
     if (this.route){
       this.router.navigate([this.route])
     }

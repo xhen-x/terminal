@@ -7,8 +7,8 @@ import { HeaderComponent } from "../../../header/header.component";
 @Component({
   selector: 'app-F-menu',
   imports: [HeaderComponent],
-  templateUrl: './F-menu.component.html',
-  styleUrl: './F-menu.component.css'
+  templateUrl: './f-menu.component.html',
+  styleUrl: './f-menu.component.css'
 })
 export class FMenuComponent implements OnInit{
 
