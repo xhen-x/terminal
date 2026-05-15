@@ -35,6 +35,12 @@ export class Link2500PinpadComponent {
     this.pinpadService.backspace();
   }
 
+  onclickup(){
+    this.pinpadService.moveUp();
+  }
+  onclickdown(){
+    this.pinpadService.moveDown();
+  }
   
 
 }
