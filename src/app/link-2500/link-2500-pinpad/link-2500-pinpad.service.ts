@@ -19,6 +19,9 @@ export class Link2500PinpadService {
         const current = this.PinInput.getValue();
         this.PinInput.next(current.slice(0, -1));  // removes last number
     }
+    select(){
+        this.PinInput.next("SELECT")
+    }
 
     getValue():string {
         return this.PinInput.getValue() // get the current value
@@ -29,17 +32,20 @@ export class Link2500PinpadService {
     selectedIndex$ = this.selectedIndex.asObservable();
 
     private totalButtons = new BehaviorSubject<number>(0);
-    // from the screen that is hosting the button you would need to set it
+    
     setTotalButtons(total: number) {
+        // this is for me to know the total amount this is also being used by registerButton
         this.totalButtons.next(total);
     }
     registerButton():number{
+        // when adding this to option button it will count it self
         const index = this.ButtonCount
         this.ButtonCount++
         this.setTotalButtons(this.ButtonCount)
         return index
     }
     unregisterButton(){
+        //when going to anther page it will unregister the old button
         this.ButtonCount--
         this.setTotalButtons(this.ButtonCount)
     }

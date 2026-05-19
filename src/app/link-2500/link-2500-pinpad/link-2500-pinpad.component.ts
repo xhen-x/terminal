@@ -41,6 +41,12 @@ export class Link2500PinpadComponent {
   onclickdown(){
     this.pinpadService.moveDown();
   }
+  onSelect(){
+    this.pinpadService.select();
+    this.clearTimer = setTimeout(()=>{
+      this.onClear()
+    },500)
+  }
   
 
 }

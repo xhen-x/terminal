@@ -16,9 +16,15 @@ export class MainMenuComponent implements AfterViewInit {
     private pinpadService: Link2500PinpadService
   ){}
   private sub!: Subscription
+  private sub2!: Subscription
   @ViewChildren(OptionButtonComponent) buttons !: QueryList<OptionButtonComponent>
   
   ngAfterViewInit(): void {
+    //  this.sub = this.pinpadService.pinInput$.subscribe(value =>{
+    //   if (value.includes('SELECT')){
+    //     console.log("selecting this route: ")
+    //   }
+    // })
   }
   
 
