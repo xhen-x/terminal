@@ -31,7 +31,8 @@ export class MainMenuComponent implements AfterViewInit {
 
 
   ngOnDestroy() {
-    // this.pinpadService.reset();
+    //when the main menu is done it will reset everything
+    this.pinpadService.reset();
     // this.sub.unsubscribe();  // cleanup when screen changes
   }
 

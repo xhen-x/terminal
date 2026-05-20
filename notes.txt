@@ -1,3 +1,14 @@
 4/17/26
 
 - i have added the routes for link-2500-screen and i might need to make another routes on F menu to be able to see all the other tab
+
+
+5/18/26
+- was able to add button and was able to select them and also able to selecting route them
+    *** need to make it where it will scroll if it overflow
+    - i need to be able to confidently be able to route to the next page that will be created
+    - after need to make a stack to be able to store the previous page selection.....
+
+5/19/26
+- i was able to add the scroll feature when there's an over flow
+- it also able to snap and it auto scroll when highlighted
