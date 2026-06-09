@@ -12,3 +12,12 @@
 5/19/26
 - i was able to add the scroll feature when there's an over flow
 - it also able to snap and it auto scroll when highlighted
+    - need to figure out the CSS for scrolling 
+
+
+5/20/26
+- worked on the css of the scroll bar
+
+5/29/26
+- worked on the css of the scroll bar
+ - realized that i need to worked on the scroll bar where it will show the next one

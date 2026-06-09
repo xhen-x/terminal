@@ -9,8 +9,34 @@
 
 }
 
-.main-manue-screen{
-    width: 100%;
-    height: 85%;
+.main-manue-screen {
     overflow-y: auto;
+    height: 82.5%;
+    width: 100%;
+    container-type: inline-size;
 }
+
+/* .main-manue-screen::-webkit-scrollbar {
+    width: 4cqw;
+    
+}
+
+
+
+.main-manue-screen::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255);
+    border-radius: 999px;
+    border-left: 2.5px solid transparent;
+    border-right: 2.5px solid transparent;
+    background-clip: content-box;
+}
+.main-manue-screen::-webkit-scrollbar-track {
+    margin-bottom: 1.3cqw;
+} */
+
+
+/* from the looks of it,
+
+it looks like it is using the scroller width before it is fully render with the width and what not*/
+
+/* i think to fix this i need to render the picture first */

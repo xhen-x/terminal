@@ -37,6 +37,9 @@ export class Link2500PinpadService {
         // this is for me to know the total amount this is also being used by registerButton
         this.totalButtons.next(total);
     }
+    getTotalButtons(): number{
+        return this.totalButtons.getValue();
+    }
     registerButton():number{
         // when adding this to option button it will count it self
         const index = this.ButtonCount
@@ -57,7 +60,7 @@ export class Link2500PinpadService {
     moveUp(){
         const current = this.selectedIndex.getValue()
         if (current <= 0){
-            this.selectedIndex.next(this.totalButtons.getValue() - 1)
+            this.selectedIndex.next(this.getTotalButtons() - 1)
         }else{
             this.selectedIndex.next(current - 1)
         }
@@ -66,7 +69,7 @@ export class Link2500PinpadService {
     }
     moveDown(){
         const current = this.selectedIndex.getValue()
-        if (current >= this.totalButtons.getValue() - 1){
+        if (current >= this.getTotalButtons() - 1){
             this.selectedIndex.next(0)
         }else{
             this.selectedIndex.next(current + 1)

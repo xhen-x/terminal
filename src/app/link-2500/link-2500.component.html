@@ -1,11 +1,17 @@
 <div class="main" #main>
     <div class="Terminal-container"> 
-        <img src="Link-2500.png" class="Link-Terminal" #linkImg>
-        <div class="Terminal-area" #TerminalArea >
-            <router-outlet class="Screen"></router-outlet>
-        </div>
-        <div class="Terminal-Pin-Pad">
-            <app-link-2500-pinpad #linkPinPad></app-link-2500-pinpad>
-        </div>
+        <img src="Link-2500.png" class="Link-Terminal" #linkImg
+        (load)="onimgLoad()"
+        >
+        @if (isLoaded){
+            <div class="Terminal-area" #TerminalArea >
+                <router-outlet class="Screen"></router-outlet>
+            </div>
+           
+            <div class="Terminal-Pin-Pad">
+                <app-link-2500-pinpad #linkPinPad></app-link-2500-pinpad>
+            </div>
+        }
+        
     </div>
 </div>

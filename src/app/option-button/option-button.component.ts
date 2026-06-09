@@ -13,7 +13,7 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
   constructor( 
     private router:Router,
     private pinpadService: Link2500PinpadService,
-    private el: ElementRef // referencing the button itself
+    private el: ElementRef // referencing the button itself 
   ){}
 
   private sub!: Subscription
@@ -32,11 +32,13 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
       if (value == this.index){
         this.isHighlighted = true
         // might need to add a timer if it doesn't scroll due to it not rendering
-        this.el.nativeElement.scrollIntoView ({
-          block: 'nearest'
-        },0)
+        // this is to automatically scroll to
+        setTimeout(() => {
+          this.scrollIntoViewIfNeeded() // ← called when highlighted
+        }, 0)
       }else{
         this.isHighlighted = false
+        
       }
     })
     this.sub2 = this.pinpadService.pinInput$.subscribe(value =>{
@@ -46,6 +48,34 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
     })
 
   }
+
+    scrollIntoViewIfNeeded() {
+      const el        = this.el.nativeElement
+      const container = el.closest('.main-manue-screen') // to find the container of main page
+      if (!container) return
+
+      const total  = this.pinpadService.getTotalButtons()
+      const isLast = this.index === total - 1  // ← is this the last button?
+      const isfirst = this.index === 0
+      if (isLast) {
+        // last item highlight 
+        el.scrollIntoView({ behavior: 'instant', block: 'nearest' })
+        return // this is to make it scroll to the next aka ignore the next if statement
+      }
+      if (isfirst){
+        el.scrollIntoView({ behavior: 'instant', block: 'nearest' })
+        return
+      }
+
+      // scroll to show NEXT item peeking at bottom and also showing the current items as well
+      const nextEl = el.nextElementSibling
+      if (nextEl) {
+        el.scrollIntoView({ behavior: 'instant', block: 'nearest' })
+        nextEl.scrollIntoView({ behavior: 'instant', block: 'nearest' })
+      }
+  }
+
+  
   
   // i don't need this but incase i'll leave it her if i do
   // onClick(){
