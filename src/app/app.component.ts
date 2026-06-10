@@ -6,20 +6,13 @@ import { RouterOutlet,RouterLink, RouterLinkWithHref } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewInit{ // this is me looking for the main tag on app HTML
+export class AppComponent implements AfterViewInit{ 
 
-  title = 'TerminalApps';
   ngAfterViewInit(): void {
   }
 
 
   
-  
-  
-
-  
-
-  // width: number;
 
   
 }

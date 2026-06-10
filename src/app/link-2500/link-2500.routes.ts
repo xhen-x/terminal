@@ -3,7 +3,7 @@ import { HomeComponent } from './link-2500-screen/Home/Home.component';
 import { FMenuComponent } from './link-2500-screen/F-menu/f-menu.component';
 
 //this is going to be the master routes list
-export const Home_Routes: Routes = [
+export const Link_2500_Routes: Routes = [
     {
         path:'', component:HomeComponent, pathMatch:"full",
         

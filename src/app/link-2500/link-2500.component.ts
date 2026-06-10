@@ -10,17 +10,7 @@ import { RouterOutlet } from "@angular/router";
   styleUrl: './link-2500.component.css'
 })
 export class Link2500Component implements OnInit,AfterViewInit{
-// try to find teh scale at which the picture grew by for example if the height of the pic is 10 and it went up to 100 the scale would be 10 which i can use to multiple the screen with
-  
-  // @ViewChild('linkImg') linkImg!: ElementRef;
-  // @ViewChild('linkScreen', {read: ElementRef}) linkScreen!: ElementRef;
-  // @ViewChild('main') main!: ElementRef;
-  // @ViewChild('screenArea') screenArea!: ElementRef;
-  
-
   isLoaded = false
-  // DefaultScreenAreaTop   : number = 272 // 272 px
-  // DefaultScreenAreaTop:
 
   
   ngAfterViewInit(): void {

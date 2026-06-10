@@ -4,12 +4,12 @@
         (load)="onimgLoad()"
         >
         @if (isLoaded){
-            <div class="Terminal-area" #TerminalArea >
+            <div class="Terminal-area" >
                 <router-outlet class="Screen"></router-outlet>
             </div>
            
             <div class="Terminal-Pin-Pad">
-                <app-link-2500-pinpad #linkPinPad></app-link-2500-pinpad>
+                <app-link-2500-pinpad ></app-link-2500-pinpad>
             </div>
         }
         
