@@ -1,0 +1,9 @@
+:host {
+    position: absolute;
+    background-color: brown; 
+    color: white;
+
+    margin-top: 37.4%;
+    height: 28.6%;
+    width: 67%;
+}

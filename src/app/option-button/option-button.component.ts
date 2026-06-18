@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Link2500PinpadService } from '../link-2500/link-2500-pinpad/link-2500-pinpad.service';
 import { Subscription } from 'rxjs';
 
@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 export class OptionButtonComponent implements OnInit,OnDestroy{
   constructor( 
     private router:Router,
+    private activatedRoute: ActivatedRoute,
     private pinpadService: Link2500PinpadService,
     private el: ElementRef // referencing the button itself 
   ){}
@@ -35,7 +36,7 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
         // this is to automatically scroll to
         setTimeout(() => {
           this.scrollIntoViewIfNeeded() // ← called when highlighted
-        }, 0)
+        }, 100)
       }else{
         this.isHighlighted = false
         
@@ -43,7 +44,8 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
     })
     this.sub2 = this.pinpadService.pinInput$.subscribe(value =>{
       if(this.isHighlighted && value.includes("SELECT")){
-        this.router.navigate([this.route])
+        this.navigate()
+        this.pinpadService.clear()
       }
     })
 
@@ -69,13 +71,20 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
 
       // scroll to show NEXT item peeking at bottom and also showing the current items as well
       const nextEl = el.nextElementSibling
+      const prevEl = el.previousElementSibling
       if (nextEl) {
+        prevEl.scrollIntoView({ behavior: 'instant', block: 'nearest' })
         el.scrollIntoView({ behavior: 'instant', block: 'nearest' })
         nextEl.scrollIntoView({ behavior: 'instant', block: 'nearest' })
+        return
       }
   }
 
-  
+  navigate(){
+    this.router.navigate([this.route],{
+      relativeTo: this.activatedRoute
+    })
+  }
   
   // i don't need this but incase i'll leave it her if i do
   // onClick(){
