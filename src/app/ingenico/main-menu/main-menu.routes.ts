@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
 import { MainMenuComponent } from './main-menu.component';
 import { Component } from '@angular/core';
-import { ControlPanelComponent } from './control-panel/control-panel.component';
-import { TSAComponent } from './tsa/tsa.component';
-import { TetraAdminComponent } from './tetra-admin/tetra-admin.component';
-import { TDAComponent } from './tda/tda.component';
-import { S8460370201Component } from './s-8460370201/s-8460370201.component';
-import { CAVDEVComponent } from './cav-dev/cav-dev.component';
-import { FormMgrSrvcComponent } from './form-mgr-srvc/form-mgr-srvc.component';
-import { WICComponent } from './wic/wic.component';
+import { ControlPanelComponent } from './screens/control-panel/control-panel.component';
+import { TSAComponent } from './screens/tsa/tsa.component';
+import { TetraAdminComponent } from './screens/tetra-admin/tetra-admin.component';
+import { TDAComponent } from './screens/tda/tda.component';
+import { S8460370201Component } from './screens/s-8460370201/s-8460370201.component';
+import { CAVDEVComponent } from './screens/cav-dev/cav-dev.component';
+import { FormMgrSrvcComponent } from './screens/form-mgr-srvc/form-mgr-srvc.component';
+import { WICComponent } from './screens/wic/wic.component';
 
 
 export const Main_Menu_Routes: Routes = [

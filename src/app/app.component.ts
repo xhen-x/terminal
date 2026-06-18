@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { RouterOutlet,RouterLink, RouterLinkWithHref } from '@angular/router';
-import { OptionButtonComponent } from './option-button/option-button.component';
+import { OptionButtonComponent } from './ingenico/option-button/option-button.component';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink],

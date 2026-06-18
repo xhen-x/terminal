@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterOutlet, Router } from "@angular/router";
-import { Link2500PinpadService } from '../../link-2500-pinpad/link-2500-pinpad.service';
+import { Link2500PinpadService } from '../../link-2500/link-2500-pinpad/link-2500-pinpad.service';
 import { Subscription } from 'rxjs';
 
-
+// ../../link-2500-pinpad/link-2500-pinpad.service
 @Component({
   selector: 'app-Home',
   imports: [],

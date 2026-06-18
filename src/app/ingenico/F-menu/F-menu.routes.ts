@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { FMenuComponent } from './f-menu.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
+import { MainMenuComponent } from '../main-menu/main-menu.component';
 
 export const F_Menu_Routes: Routes = [
     {
@@ -9,7 +9,7 @@ export const F_Menu_Routes: Routes = [
     },
     {
         path:'Main-Menu',
-        loadChildren: () => import('./main-menu/main-menu.routes')
+        loadChildren: () => import('../main-menu/main-menu.routes')
                             .then(m => m.Main_Menu_Routes)
     },
 ];

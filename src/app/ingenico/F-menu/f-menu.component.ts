@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Link2500PinpadService } from '../../link-2500-pinpad/link-2500-pinpad.service';
+import { Link2500PinpadService } from '../../link-2500/link-2500-pinpad/link-2500-pinpad.service';
 import { Subscription } from 'rxjs';
 import { Router } from "@angular/router";
-import { HeaderComponent } from "../../../header/header.component";
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-F-menu',

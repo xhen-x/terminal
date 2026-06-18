@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from "../../../../../header/header.component";
-import { OptionButtonComponent } from "../../../../../option-button/option-button.component";
+import { HeaderComponent } from "../../../header/header.component";
+import { OptionButtonComponent } from "../../../option-button/option-button.component";
 
 @Component({
   selector: 'app-tetra-admin',

@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Link2500PinpadService } from '../link-2500/link-2500-pinpad/link-2500-pinpad.service';
+import { Link2500PinpadService } from '../../link-2500/link-2500-pinpad/link-2500-pinpad.service';
 import { Subscription } from 'rxjs';
 
 @Component({

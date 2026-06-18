@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, viewChild, ViewChild, ViewChildren } from '@angular/core';
-import { HomeComponent } from "./link-2500-screen/Home/Home.component";
+import { HomeComponent } from '../ingenico/Home/Home.component';
 import { Link2500PinpadComponent } from "./link-2500-pinpad/link-2500-pinpad.component"
 import { RouterOutlet } from "@angular/router";
 

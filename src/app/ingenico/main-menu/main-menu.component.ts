@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, QueryList, ViewChildren, ElementRef, HostListener, ChangeDetectorRef } from '@angular/core';
-import { HeaderComponent } from "../../../../header/header.component";
-import { OptionButtonComponent } from '../../../../option-button/option-button.component';
-import { Link2500PinpadService } from '../../../link-2500-pinpad/link-2500-pinpad.service';
-import { scrollbarService } from '../../../link-2500-scrollbar.service'
+import { HeaderComponent } from "../header/header.component";
+import { OptionButtonComponent } from '../option-button/option-button.component';
+import { Link2500PinpadService } from '../../link-2500/link-2500-pinpad/link-2500-pinpad.service';
+import { scrollbarService } from '../../link-2500/link-2500-scrollbar.service'
 import { Subscription } from 'rxjs';
 
 @Component({
