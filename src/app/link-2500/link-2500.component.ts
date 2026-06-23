@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, 
 import { HomeComponent } from '../ingenico/Home/Home.component';
 import { Link2500PinpadComponent } from "./link-2500-pinpad/link-2500-pinpad.component"
 import { RouterOutlet } from "@angular/router";
+import { Link2500PinpadService } from './link-2500-pinpad/link-2500-pinpad.service';
 
 @Component({
   selector: 'app-link-2500',
@@ -12,7 +13,6 @@ import { RouterOutlet } from "@angular/router";
 export class Link2500Component implements OnInit,AfterViewInit{
   isLoaded = false
 
-  
   ngAfterViewInit(): void {
     console.log('DOM view is fully ready in link 2500.');
   }
@@ -21,7 +21,10 @@ export class Link2500Component implements OnInit,AfterViewInit{
     
     console.log('link 2500 initilizing');
     
+    
   }
+
+
 
   onimgLoad(){ // this will flag the html to know that the img has been loaded
     this.isLoaded = true

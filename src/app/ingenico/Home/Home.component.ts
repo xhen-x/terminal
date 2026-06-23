@@ -11,17 +11,19 @@ import { Subscription } from 'rxjs';
   styleUrl: './Home.component.css'
 })
 export class HomeComponent implements OnInit {
+  private currentURL: string = '';
   // @Input () todo = null
-
   constructor(
     private pinpadService:Link2500PinpadService,
-    private router:Router
+    private router:Router,
 
   ){}
   private sub!: Subscription
-
+  
   ngOnInit(): void {
       // listens for any changes from pinpad
+    this.currentURL = this.router.url
+    this.pinpadService.clearHistory()
     this.sub = this.pinpadService.pinInput$.subscribe(value => {
       if (value.includes('2634')){
         console.log("switching to 2634")
@@ -35,9 +37,12 @@ export class HomeComponent implements OnInit {
       }
     });
 
+    
+
   }
 
   ngOnDestroy() {
+    this.pinpadService.pushToHistory(this.currentURL)
     this.sub.unsubscribe();  // cleanup when screen changes
   }
 }

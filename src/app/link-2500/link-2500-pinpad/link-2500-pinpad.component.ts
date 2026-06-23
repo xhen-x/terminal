@@ -47,6 +47,8 @@ export class Link2500PinpadComponent {
       this.onClear()
     },500)
   }
-  
+  goBack(){
+    this.pinpadService.back()
+  }
 
 }
