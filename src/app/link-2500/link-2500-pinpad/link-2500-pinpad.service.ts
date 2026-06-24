@@ -63,14 +63,13 @@ export class Link2500PinpadService {
         return this.PinInput.getValue() // get the current value
     }
 
-    pushToHistory(url:string){
-        if (this.isGoingBack) {
+    pushToHistory(url:string){    
+        if (this.isGoingBack || url.endsWith("F-menu")) {
             this.isGoingBack = false;  // ← reset flag
             return;                    // ← skip push when going back
         }
-
-        if (this.routeHistory.at(-1) === url) return
         this.routeHistory.push(url)
+        console.log(this.routeHistory)
     }
     clearHistory(){
         this.routeHistory = []

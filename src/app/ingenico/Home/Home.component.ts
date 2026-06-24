@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   
   ngOnInit(): void {
       // listens for any changes from pinpad
+    console.log("this is being made on home!")
     this.currentURL = this.router.url
     this.pinpadService.clearHistory()
     this.sub = this.pinpadService.pinInput$.subscribe(value => {
@@ -42,7 +43,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    console.log("trigger")
     this.pinpadService.pushToHistory(this.currentURL)
+    this.pinpadService.clear()
     this.sub.unsubscribe();  // cleanup when screen changes
   }
 }
