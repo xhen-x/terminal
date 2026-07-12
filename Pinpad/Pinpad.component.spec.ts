@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 
-import { Link2500PinpadComponent } from './link-2500-pinpad.component';
+import { Link2500PinpadComponent } from './Pinpad.component';
 
 describe('Link2500PinpadComponent', () => {
   let component: Link2500PinpadComponent;

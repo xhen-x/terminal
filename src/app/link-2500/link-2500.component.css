@@ -1,3 +1,18 @@
+:host{
+    --pinpad-height: 100%;
+    --pinpad-container-height:35%;
+    --pinpad-container-padding:12%;
+    --grid-width: 80%;
+    --grid-height: 84%;
+    --row-gap: 7.5%;
+    --col-gap: 5.5%;
+    --f-row-height: 20%%;
+    --f-row-width: 73%;
+    --f-row-gap: 10%;
+    --btn-font-size: 5cqw;
+    --btn-color: transparent;
+}
+
 .main {
     height: 100vh;
     position: relative;
@@ -51,7 +66,7 @@
     align-items: flex-end;
 }
 
-app-link-2500-pinpad{
+app-Pin{
     width: 100%;
     height: 100%;
     display: grid;

@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Link2500PinpadService } from '../../link-2500/link-2500-pinpad/link-2500-pinpad.service';
 import { Subscription } from 'rxjs';
+import { pinService } from '../pin/pin.service';
 
 @Component({
   selector: 'app-option-button',
@@ -13,7 +13,7 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
   constructor( 
     private router:Router,
     private activatedRoute: ActivatedRoute,
-    private pinpadService: Link2500PinpadService,
+    private pinpadService: pinService,
     private el: ElementRef // referencing the button itself 
   ){}
 
@@ -23,7 +23,6 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
   index:number = 0
   @Input() label: string ='';
   @Input() route: string ='';
-  @Input() bgcolor: string='';
 
   
   ngOnInit(): void {

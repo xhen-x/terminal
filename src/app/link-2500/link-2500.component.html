@@ -9,7 +9,15 @@
             </div>
            
             <div class="Terminal-Pin-Pad">
-                <app-link-2500-pinpad ></app-link-2500-pinpad>
+                <app-pin
+                    [buttons]="buttons"
+                    [fButtons]="fButtons"
+                    [showFRow]="true"
+                    [Keymode]="keyMode"
+                    [Backmode] = "backMode">
+
+                </app-pin>
+                <!-- <app-Pinpad [showFKey]="true"></app-Pinpad> -->
             </div>
         }
         

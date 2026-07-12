@@ -1,11 +1,14 @@
 <div class="pinpad-main">
     <div class="pinpad-container">
-        <div class="F-container">
-            <button type="button"></button>
-            <button type="button"(click)="onclickup()"></button>
-            <button type="button"(click)="onclickdown()"></button>
-            <button type="button"></button>
-        </div>
+        @if(showFKey){
+            <div class="F-container">
+                <button type="button"></button>
+                <button type="button"(click)="onclickup()"></button>
+                <button type="button"(click)="onclickdown()"></button>
+                <button type="button"></button>
+            </div>
+        }
+        
         <div class="num-container">
             <button type="button" (click)="onClick('1')"></button>
             <button type="button" (click)="onClick('2')"></button>

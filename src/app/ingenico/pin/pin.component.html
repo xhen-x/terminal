@@ -1,0 +1,50 @@
+<div class="pinpad-main">
+  <div class="pinpad-container">
+
+    <!-- optional F key row -->
+    @if (showFRow && fButtons.length > 0) {
+      <div class="f-row">
+        @for (btn of fButtons; track btn.value) {
+          <button
+            type="button"
+            class="pinpad-btn f-btn"
+            (click)="onButtonClick(btn)">
+            <!-- transparent no label needed -->
+          </button>
+        }
+      </div>
+    }
+
+    <!-- main number grid -->
+    <div class="pinpad-grid">
+      @for (button of buttons; track button.value) {
+        <button
+          type="button"
+          class="pinpad-btn"
+          [class.number]="button.type === 'number'"
+          [class.action]="button.type === 'action'"
+          [class.special]="button.type === 'special'"
+          [style.grid-row]="button.rowSpan 
+            ? button.row + ' / span ' + button.rowSpan 
+            : button.row"
+          [style.grid-column]="button.colSpan 
+            ? button.col + ' / span ' + button.colSpan 
+            : button.col"
+          (click)="onButtonClick(button)">
+
+          <!-- number label -->
+          <span class="btn-number"></span>
+
+          <!-- letter labels in letter mode -->
+          @if (Keymode === 'letter' && button.letters?.length) {
+            <span class="btn-letters">
+              {{ button.letters!.join('') }}
+            </span>
+          }
+
+        </button>
+      }
+    </div>
+
+  </div>
+</div>

@@ -1,14 +1,16 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { Link2500PinpadService } from './link-2500-pinpad.service';
+import { Link2500PinpadService } from './Pinpad.service';
 
 @Component({
-  selector: 'app-link-2500-pinpad',
+  selector: 'app-Pinpad',
   imports: [],
-  templateUrl: './link-2500-pinpad.component.html',
-  styleUrl: './link-2500-pinpad.component.css'
+  templateUrl: './Pinpad.component.html',
+  styleUrl: './Pinpad.component.css'
 })
 export class Link2500PinpadComponent {
+
+  @Input() showFKey: boolean = false;
 
   constructor(private pinpadService : Link2500PinpadService){
 

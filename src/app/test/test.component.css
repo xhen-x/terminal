@@ -1,0 +1,23 @@
+/* link-2500-pinpad.component.css */
+:host {
+    --pinpad-height: 100%;
+    --grid-width: 80%;
+    --grid-height: 84%;
+    --row-gap: 7.5%;
+    --col-gap: 5.5%;
+    --f-row-height: 20%%;
+    --f-row-gap: 10%;
+    --btn-font-size: 5cqw;
+    --btn-color: transparent;
+    display: block;
+    width: 100%;
+    height: 100vh; /* ← give it a height! */
+}
+
+
+
+app-pinpad {
+    display: block;
+    width: 100%;    /* ← fills wrapper ✅ */
+    height: 100%;   /* ← fills wrapper ✅ */
+}

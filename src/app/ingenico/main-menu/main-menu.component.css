@@ -2,7 +2,6 @@
     position: absolute;
     background-color: brown; 
     color: white;
-
     margin-top: 37.4%;
     height: 28.6%;
     width: 67%;
@@ -11,6 +10,7 @@
 
 .main-manue-screen {
     overflow-y: auto;
+    overscroll-behavior: None;
     height: 82.5%;
     width: 100%;
     container-type: inline-size;

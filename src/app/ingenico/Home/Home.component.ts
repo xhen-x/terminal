@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterOutlet, Router } from "@angular/router";
-import { Link2500PinpadService } from '../../link-2500/link-2500-pinpad/link-2500-pinpad.service';
 import { Subscription } from 'rxjs';
+import { pinService } from '../pin/pin.service';
+import { PinpadComponent } from '../pin/pin.component';
 
 // ../../link-2500-pinpad/link-2500-pinpad.service
 @Component({
@@ -14,17 +15,20 @@ export class HomeComponent implements OnInit {
   private currentURL: string = '';
   // @Input () todo = null
   constructor(
-    private pinpadService:Link2500PinpadService,
+    private pinpadService:pinService,
     private router:Router,
 
   ){}
   private sub!: Subscription
   
   ngOnInit(): void {
+    this.pinpadService.setBackMode('menu')
+    this.pinpadService.setKeyMode('number')
+    
       // listens for any changes from pinpad
     console.log("this is being made on home!")
     this.currentURL = this.router.url
-    this.pinpadService.clearHistory()
+    // this.pinpadService.clearHistory()
     this.sub = this.pinpadService.pinInput$.subscribe(value => {
       if (value.includes('2634')){
         console.log("switching to 2634")
@@ -38,12 +42,12 @@ export class HomeComponent implements OnInit {
       }
     });
 
+
     
 
   }
 
   ngOnDestroy() {
-    console.log("trigger")
     this.pinpadService.pushToHistory(this.currentURL)
     this.pinpadService.clear()
     this.sub.unsubscribe();  // cleanup when screen changes
