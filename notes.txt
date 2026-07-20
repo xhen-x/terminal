@@ -21,3 +21,7 @@
 5/29/26
 - worked on the css of the scroll bar
  - realized that i need to worked on the scroll bar where it will show the next one
+
+
+7/12/26
+- need to working on why the new pages are not adding to the stack when going back

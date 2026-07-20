@@ -69,7 +69,7 @@ export class pinService{
         this.PinInput.next("SELECT")
     }
 
-
+    //need to look into push history
     pushToHistory(url:string){    
         if (this.isGoingBack || url.endsWith("F-menu")) {
             this.isGoingBack = false;  // ← reset flag
@@ -162,12 +162,16 @@ export class pinService{
 
     }
     getBackMode(): 'menu' | 'input'{
-        console.log(this.backmode.getValue())
         return this.backmode.getValue();
     }
     toggleBackMode(){
         const current = this.backmode.getValue();
         this.backmode.next(current === 'menu' ? 'input' : 'menu')
+    }
+    gotoScreen(path:string){
+
+        this.route.navigate([path])
+
     }
 
 

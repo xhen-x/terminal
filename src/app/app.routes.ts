@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { Link2500Component } from './link-2500/link-2500.component';
-import { ControlPanelComponent } from './ingenico/main-menu/screens/control-panel/control-panel.component';
+import { ControlPanelComponent } from './ingenico/main-menu/options/control-panel/control-panel.component';
 import { PinpadComponent } from './ingenico/pin/pin.component';
 import { TestComponent } from './test/test.component';
 // import { HeaderComponent } from './header/header.component';

@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   private sub!: Subscription
   
   ngOnInit(): void {
+    this.pinpadService.clearHistory();
     this.pinpadService.setBackMode('menu')
     this.pinpadService.setKeyMode('number')
     

@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from '../ingenico/Home/Home.component';
 import { FMenuComponent } from '../ingenico/F-menu/f-menu.component';
+import { RebootComponent } from '../ingenico/reboot/reboot.component';
 
 //this is going to be the master routes list
 export const Link_2500_Routes: Routes = [
@@ -13,4 +14,8 @@ export const Link_2500_Routes: Routes = [
         loadChildren: () => import('../ingenico/F-menu/F-menu.routes')
                         .then(m => m.F_Menu_Routes)  // ← will let f-menu routes to take control
     },  // this will allow me to keep the url but not keep the main cluter up
+    {
+        path: 'reboot',
+        component: RebootComponent
+    },
 ];

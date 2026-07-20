@@ -21,6 +21,8 @@
         <button
           type="button"
           class="pinpad-btn"
+          attr.button-row="{{ button.row }}"
+          attr.button-col="{{button.col}}"
           [class.number]="button.type === 'number'"
           [class.action]="button.type === 'action'"
           [class.special]="button.type === 'special'"
@@ -30,6 +32,12 @@
           [style.grid-column]="button.colSpan 
             ? button.col + ' / span ' + button.colSpan 
             : button.col"
+          (mousedown)="onDragStart(button,$event)"
+          (mouseenter)="onDragEnter(button)"
+          (mouseup)="onDragEnd()"
+          (touchstart)="onTouchStart(button, $event)"
+          (touchmove)="onTouchMove(button,$event)"
+          (touchend)="onDragEnd()"
           (click)="onButtonClick(button)">
 
           <!-- number label -->

@@ -43,6 +43,7 @@
     row-gap: var(--row-gap, 5%);
     column-gap: var(--col-gap, 5%);
     flex: 1; /* ← takes remaining space */
+    touch-action: none;
     /* padding-bottom: var(--pad-bot, 1%); */
 }
 

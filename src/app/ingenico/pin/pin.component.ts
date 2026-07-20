@@ -1,7 +1,8 @@
-import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PinpadButton } from '../pin/pin-button-model';
 import { pinService } from './pin.service';
+import { __values } from 'tslib';
 
 @Component({
   selector: 'app-pin',
@@ -20,6 +21,8 @@ export class PinpadComponent implements OnInit, OnDestroy {
 
   @Output() buttonPressed = new EventEmitter<string>();
   @Output() valueChanged  = new EventEmitter<string>();
+
+  
 
   // multi tap tracking
   private lastKey: string = '';
@@ -135,6 +138,74 @@ export class PinpadComponent implements OnInit, OnDestroy {
   }
   onPrevious(){
     this.pinServ.previousPage()
+  }
+
+  //dragging event
+  isDragging = false;
+  dragStart: PinpadButton | null = null;
+
+  //desktop version
+  onDragStart(button: PinpadButton, event: MouseEvent) {
+    // only start drag on BACK button
+    if (button.value !== 'BACK') return;
+    
+    this.isDragging = true;
+    this.dragStart  = button;
+    console.log('drag started on BACK');
+  }
+
+  onDragEnter(button: PinpadButton) {
+    if (!this.isDragging) return;
+
+    // only trigger if dragging onto # button
+    if (button.row === 4 && button.col === 3 && this.dragStart?.value === 'BACK') {
+      console.log('BACK dragged to # ✅');
+      this.handleBackToHash();
+    }
+  }
+
+  onDragEnd() {
+    this.isDragging = false;
+    this.dragStart  = null;
+  }
+
+  // --- TOUCH EVENTS (mobile) ---
+  onTouchStart(button: PinpadButton, event: TouchEvent) {
+    if (button.value !== 'BACK') return;
+    this.isDragging = true;
+    this.dragStart  = button;
+    console.log('touch drag started on BACK');
+  }
+
+  onTouchMove(button:PinpadButton, event: TouchEvent) {
+    if (!this.isDragging) return;
+
+    const touch   = event.touches[0];
+
+  // get element under the finger
+    const element = document.elementFromPoint(
+      touch.clientX, 
+      touch.clientY
+    );
+
+  // check if finger is over a button
+    const btnElement = element?.closest('.pinpad-btn');
+    if (!btnElement) return;
+
+  // finding the exact button that is going to reset
+    const buttonrow = btnElement.getAttribute("button-row")
+    const buttoncol = btnElement.getAttribute("button-col")
+    if (buttonrow === "4" && buttoncol === "3" && this.dragStart?.value === 'BACK') {
+      console.log('touch dragged BACK to # ✅')
+      this.handleBackToHash();
+    }
+  }
+
+
+  handleBackToHash() {
+    this.isDragging = false;
+    this.dragStart  = null;
+    this.pinServ.gotoScreen('/Link-2500/reboot');
   }
 
   

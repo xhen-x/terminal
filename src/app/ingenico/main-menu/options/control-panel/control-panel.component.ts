@@ -1,19 +1,17 @@
-import { AfterViewInit, Component, QueryList, ViewChildren, ElementRef, HostListener, ChangeDetectorRef, viewChild, ViewChild, OnInit } from '@angular/core';
-import { HeaderComponent } from "../header/header.component";
-import { OptionButtonComponent } from '../option-button/option-button.component';
-import { scrollbarService } from '../../link-2500/link-2500-scrollbar.service'
-import { Subscription } from 'rxjs';
+import { Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { HeaderComponent } from "../../../header/header.component";
+import { OptionButtonComponent } from '../../../option-button/option-button.component';
+import { pinService } from '../../../pin/pin.service';
+import { scrollbarService } from '../../../../link-2500/link-2500-scrollbar.service'
 import { Router } from '@angular/router';
-import { pinService } from '../pin/pin.service';
-
 
 @Component({
-  selector: 'app-main-menu',
+  selector: 'app-control-panel',
   imports: [HeaderComponent,OptionButtonComponent],
-  templateUrl: './main-menu.component.html',
-  styleUrl: './main-menu.component.css'
+  templateUrl: './control-panel.component.html',
+  styleUrl: './control-panel.component.css'
 })
-export class MainMenuComponent implements AfterViewInit, OnInit{
+export class ControlPanelComponent {
   private currentURL:string = ''
   constructor(
     private pinpadService: pinService,
@@ -32,7 +30,6 @@ export class MainMenuComponent implements AfterViewInit, OnInit{
     this.scrollbarService.applyScrollstyle(this.el.nativeElement);
     this.currentURL = this.router.url
   }
-  //stop mouse wheel from scrolling on menu
   @HostListener('wheel', ['$event'])
     onWheel(event: WheelEvent) {
       event.preventDefault();
@@ -41,7 +38,6 @@ export class MainMenuComponent implements AfterViewInit, OnInit{
   onResize() {
     this.scrollbarService.applyScrollstyle(this.el.nativeElement);
   }
-  
 
   ngOnDestroy() {
     
@@ -50,5 +46,4 @@ export class MainMenuComponent implements AfterViewInit, OnInit{
     this.pinpadService.pushToHistory(this.currentURL)
     this.scrollbarService.removeScrollstyle();
   }
-
 }
