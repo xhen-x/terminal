@@ -31,6 +31,7 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
       console.log(value, this.index)
       if (value == this.index){
         this.isHighlighted = true
+        console.log("this is what being selected :", this.index)
         // might need to add a timer if it doesn't scroll due to it not rendering
         // this is to automatically scroll to
         setTimeout(() => {
@@ -52,7 +53,7 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
 
     scrollIntoViewIfNeeded() {
       const el        = this.el.nativeElement
-      const container = el.closest('.main-manue-screen') // to find the container of main page
+      const container = el.closest('.main-menu-screen') // to find the container of main page
       if (!container) return
 
       const total  = this.pinpadService.getTotalButtons()

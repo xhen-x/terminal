@@ -22,8 +22,11 @@ export const Control_Panel_Routes: Routes = [
     {
         path: 'Terminal-info',component:TerminalInfoComponent,pathMatch:'full'
     },
+    
     {
-        path: 'Terminal-settings',component:TerminalSettingsComponent,pathMatch:'full'
+        path: 'Terminal-settings',
+        loadChildren: () => import('./options/terminal-settings/terminal-settings.routes')
+                            .then(m => m.Terminal_Settings_Routes)
     },
 
 ];

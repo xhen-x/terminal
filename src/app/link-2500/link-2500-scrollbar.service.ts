@@ -26,17 +26,17 @@ export class scrollbarService{
       }
 
       style.innerHTML = `
-        .main-manue-screen::-webkit-scrollbar {
+        .main-menu-screen::-webkit-scrollbar {
           width: ${scrollbarSize}px !important;
         }
-        .main-manue-screen::-webkit-scrollbar-thumb {
+        .main-menu-screen::-webkit-scrollbar-thumb {
           background: rgba(255,255,255);
           border-radius: 999px;
           border-left: ${paddingSize}px solid transparent;
           border-right: ${paddingSize}px solid transparent;
           background-clip: content-box;
         }
-        .main-manue-screen::-webkit-scrollbar-track {
+        .main-menu-screen::-webkit-scrollbar-track {
           margin-bottom: ${marginSize}px;
         }
       `;

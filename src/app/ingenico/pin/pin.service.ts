@@ -70,6 +70,8 @@ export class pinService{
     }
 
     //need to look into push history
+
+    //this.isgoingback is to prevent the terminal from going in a loop....
     pushToHistory(url:string){    
         if (this.isGoingBack || url.endsWith("F-menu")) {
             this.isGoingBack = false;  // ← reset flag
@@ -157,6 +159,8 @@ export class pinService{
         this.keymode.next(current === 'number' ? 'letter' : 'number');
     }
 
+    
+    // changing the mode for the back buttin
     setBackMode(mode: 'menu' | 'input'){
         this.backmode.next(mode);
 

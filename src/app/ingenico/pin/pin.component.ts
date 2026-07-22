@@ -151,7 +151,6 @@ export class PinpadComponent implements OnInit, OnDestroy {
     
     this.isDragging = true;
     this.dragStart  = button;
-    console.log('drag started on BACK');
   }
 
   onDragEnter(button: PinpadButton) {
@@ -159,7 +158,6 @@ export class PinpadComponent implements OnInit, OnDestroy {
 
     // only trigger if dragging onto # button
     if (button.row === 4 && button.col === 3 && this.dragStart?.value === 'BACK') {
-      console.log('BACK dragged to # ✅');
       this.handleBackToHash();
     }
   }
@@ -174,7 +172,6 @@ export class PinpadComponent implements OnInit, OnDestroy {
     if (button.value !== 'BACK') return;
     this.isDragging = true;
     this.dragStart  = button;
-    console.log('touch drag started on BACK');
   }
 
   onTouchMove(button:PinpadButton, event: TouchEvent) {
@@ -196,7 +193,6 @@ export class PinpadComponent implements OnInit, OnDestroy {
     const buttonrow = btnElement.getAttribute("button-row")
     const buttoncol = btnElement.getAttribute("button-col")
     if (buttonrow === "4" && buttoncol === "3" && this.dragStart?.value === 'BACK') {
-      console.log('touch dragged BACK to # ✅')
       this.handleBackToHash();
     }
   }

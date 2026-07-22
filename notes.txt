@@ -25,3 +25,9 @@
 
 7/12/26
 - need to working on why the new pages are not adding to the stack when going back
+
+
+7/19/26
+- reason why the page are not going back properly is because i didn't add the function to push stuff
+- also added the reboot screena and also the click and drag to reboot the terminal
+- need to work on keeping the index as well
