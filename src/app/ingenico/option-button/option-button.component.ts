@@ -34,9 +34,8 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
         console.log("this is what being selected :", this.index)
         // might need to add a timer if it doesn't scroll due to it not rendering
         // this is to automatically scroll to
-        setTimeout(() => {
-          this.scrollIntoViewIfNeeded() // ← called when highlighted
-        }, 100)
+
+        this.scrollIntoViewIfNeeded() // ← called when highlighted
       }else{
         this.isHighlighted = false
         

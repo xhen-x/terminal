@@ -44,10 +44,10 @@ export class MainMenuComponent implements AfterViewInit, OnInit{
   
 
   ngOnDestroy() {
-    this.pinpadService.reset();
-    console.log("pushing: ", this.currentURL)
+    
     this.pinpadService.pushToHistory(this.currentURL)
     this.scrollbarService.removeScrollstyle();
+    this.pinpadService.reset()
   }
 
 }

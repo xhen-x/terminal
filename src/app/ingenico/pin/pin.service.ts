@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
-import {Router } from '@angular/router';
-import { BehaviorSubject} from 'rxjs';
+import {NavigationEnd, Router } from '@angular/router';
+import { BehaviorSubject, filter} from 'rxjs';
 import { Location } from '@angular/common';
 @Injectable({ providedIn: 'root' })
 
@@ -11,15 +11,23 @@ export class pinService{
     private backmode = new BehaviorSubject<'menu' | 'input'>('menu');
     pinInput$ = this.PinInput.asObservable(); // this is for the component to be able to read the input but not be able to edit (READ ONLY)
     private ButtonCount = 0
-    private routeHistory:string[] = []
+    private routeHistory:(string|number)[][] = []
     private isGoingBack = false;
+    private pendingIndex: number|null = null
     constructor(
         private route: Router,
         private location:Location
     ){
-
+        // when going back to the previous page it will keep it highlightes
+        this.route.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(()=>{
+            if (this.pendingIndex !== null){
+                this.selectedIndex.next(this.pendingIndex)
+                this.pendingIndex = null
+            }
+        })
         console.log('pinpad service created!')
         this.initializeService();
+
 
     
     }
@@ -40,7 +48,7 @@ export class pinService{
             if (screen === "F-menu"){
                 return
             }
-            this.routeHistory.push(tempURL)
+            this.routeHistory.push([tempURL,this.selectedIndex.value])
             
             
             
@@ -77,7 +85,7 @@ export class pinService{
             this.isGoingBack = false;  // ← reset flag
             return;                    // ← skip push when going back
         }
-        this.routeHistory.push(url)
+        this.routeHistory.push([url,this.selectedIndex.value])
         console.log(this.routeHistory)
     }
     clearHistory(){
@@ -89,9 +97,14 @@ export class pinService{
         if (this.routeHistory.length === 0){
             return
         }
-        const previousRoute = this.routeHistory.pop();
+        const previous = this.routeHistory.pop();
+        if(!previous) return
+        const previousRoute = previous[0] as string
+        this.pendingIndex = previous[1] as number // tempary save of the previous page index
         this.isGoingBack = true;  // ← set flag BEFORE navigating
+        
         this.route.navigate([previousRoute]);
+        
             
         console.log(this.routeHistory)
         
@@ -116,6 +129,7 @@ export class pinService{
         const index = this.ButtonCount
         this.ButtonCount++
         this.setTotalButtons(this.ButtonCount)
+
         return index
     }
     unregisterButton(){
@@ -127,6 +141,10 @@ export class pinService{
         this.ButtonCount=0
         this.selectedIndex.next(0)
         
+    }
+    setSelectIndex(ind: number){
+        this.selectedIndex.next(ind)
+        console.log("this is what index is : ", this.selectedIndex.value)
     }
 
     moveUp(){

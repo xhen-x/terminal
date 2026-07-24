@@ -40,9 +40,10 @@ export class TetraAdminComponent {
 
   ngOnDestroy() {
     
-    this.pinpadService.reset();
+    
     console.log("pushing: ", this.currentURL)
     this.pinpadService.pushToHistory(this.currentURL)
+    this.pinpadService.reset();
     this.scrollbarService.removeScrollstyle();
   }
 

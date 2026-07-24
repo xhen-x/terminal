@@ -37,10 +37,11 @@ export class TDAComponent {
 
   ngOnDestroy() {
     
-    this.pinpadService.reset();
+    
     console.log("pushing: ", this.currentURL)
     this.pinpadService.pushToHistory(this.currentURL)
     this.scrollbarService.removeScrollstyle();
+    this.pinpadService.reset();
   }
 
 }
