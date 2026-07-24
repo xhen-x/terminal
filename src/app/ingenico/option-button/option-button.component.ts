@@ -35,7 +35,10 @@ export class OptionButtonComponent implements OnInit,OnDestroy{
         // might need to add a timer if it doesn't scroll due to it not rendering
         // this is to automatically scroll to
 
-        this.scrollIntoViewIfNeeded() // ← called when highlighted
+        // need to take a look at this might need to make a pipe to filter out the router event and scroll when it is done making all of the buttons
+        setTimeout(() => {// without the time it will call it and highlight the button instantly but in IRL terminal there should be an extra button at the bottom
+          this.scrollIntoViewIfNeeded() // ← called when highlighted
+        }, 100)
       }else{
         this.isHighlighted = false
         
