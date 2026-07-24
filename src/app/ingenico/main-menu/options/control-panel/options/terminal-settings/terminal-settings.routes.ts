@@ -21,8 +21,9 @@ export const Terminal_Settings_Routes: Routes = [
         path: 'Eco-mode', component:EcoModeComponent, pathMatch:'full'
     },
     {
-        path: 'Comm-means', component:CommMeansComponent, pathMatch:'full'
+        path: 'Comm-means',
+        loadChildren: () => import('./options/comm-means/comm-means.routes')
+                            .then(m => m.Comm_Means_Routes)
     },
-
 
 ];
