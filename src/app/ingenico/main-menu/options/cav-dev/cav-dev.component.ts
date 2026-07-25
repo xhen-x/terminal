@@ -1,7 +1,10 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
-import { pinService } from '../../../pin/pin.service';
+import { Component, ElementRef, HostListener } from '@angular/core';;
 import { Router } from '@angular/router';
-import { scrollbarService } from '../../../../link-2500/link-2500-scrollbar.service'
+import { pinService } from '@pin/pin.service';
+import { scrollbarService } from '@link-2500/link-2500-scrollbar.service'
+import { HeaderComponent } from "@header/header.component";
+import { OptionButtonComponent } from '@option-button/option-button.component';
+
 
 @Component({
   selector: 'app-cav-dev',

@@ -17,6 +17,14 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
+    "baseUrl": "src",
+    "paths": {
+      "@ingenico/*":      ["app/ingenico/*"],
+      "@link-2500/*":     ["app/link-2500/*"],
+      "@option-button/*": ["app/ingenico/option-button/*"],
+      "@header/*":        ["app/ingenico/header/*"],
+      "@pin/*":           ["app/ingenico/pin/*"],        
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

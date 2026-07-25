@@ -1,8 +1,8 @@
 import { Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { HeaderComponent } from "../../../header/header.component";
-import { OptionButtonComponent } from '../../../option-button/option-button.component';
-import { pinService } from '../../../pin/pin.service';
-import { scrollbarService } from '../../../../link-2500/link-2500-scrollbar.service'
+import { HeaderComponent } from "@header/header.component";
+import { OptionButtonComponent } from '@option-button/option-button.component';
+import { pinService } from '@pin/pin.service';
+import { scrollbarService } from '@link-2500/link-2500-scrollbar.service'
 import { Router } from '@angular/router';
 
 @Component({

@@ -1,9 +1,9 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeaderComponent } from "../../../../../../../../../header/header.component";
-import { OptionButtonComponent } from "../../../../../../../../../option-button/option-button.component";
-import { pinService } from '../../../../../../../../../pin/pin.service';
-import {scrollbarService} from '../../../../../../../../../../link-2500/link-2500-scrollbar.service'
+import { HeaderComponent } from "@header/header.component";
+import { OptionButtonComponent } from "@option-button/option-button.component";
+import { pinService } from '@pin/pin.service';
+import {scrollbarService} from '@link-2500/link-2500-scrollbar.service'
 
 @Component({
   selector: 'app-bluetooth',

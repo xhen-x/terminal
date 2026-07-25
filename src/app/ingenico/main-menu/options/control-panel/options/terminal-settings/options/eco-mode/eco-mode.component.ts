@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
-import { pinService } from '../../../../../../../pin/pin.service';
-import {scrollbarService} from '../../../../../../../../link-2500/link-2500-scrollbar.service'
+import { pinService } from '@pin/pin.service';
+import {scrollbarService} from '@link-2500/link-2500-scrollbar.service'
 import { Router } from '@angular/router';
 
 @Component({
