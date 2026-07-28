@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { PinpadButton } from '../pin/pin-button-model';
 import { pinService } from './pin.service';
 import { __values } from 'tslib';
@@ -9,7 +9,7 @@ import { __values } from 'tslib';
   templateUrl: './pin.component.html',
   styleUrl: './pin.component.css',
   standalone: true,
-  imports: [CommonModule]
+  imports: []
 })
 export class PinpadComponent implements OnInit, OnDestroy {
 
