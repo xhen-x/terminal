@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, HostListener
 
 import { PinpadButton } from '../pin/pin-button-model';
 import { pinService } from './pin.service';
-import { __values } from 'tslib';
+// import { __values } from 'tslib';
 
 @Component({
   selector: 'app-pin',
