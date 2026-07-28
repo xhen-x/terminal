@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { pinService } from '../../../../../pin/pin.service';
 import { Router } from '@angular/router';
 import {scrollbarService} from '../../../../../../link-2500/link-2500-scrollbar.service'
@@ -7,6 +7,7 @@ import {scrollbarService} from '../../../../../../link-2500/link-2500-scrollbar.
   selector: 'app-terminal-info',
   imports: [],
   templateUrl: './terminal-info.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './terminal-info.component.css'
 })
 export class TerminalInfoComponent {

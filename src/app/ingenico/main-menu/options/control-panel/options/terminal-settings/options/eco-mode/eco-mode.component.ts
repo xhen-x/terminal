@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { pinService } from '@pin/pin.service';
 import {scrollbarService} from '@link-2500/link-2500-scrollbar.service'
 import { Router } from '@angular/router';
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-eco-mode',
   imports: [],
   templateUrl: './eco-mode.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './eco-mode.component.css'
 })
 export class EcoModeComponent {

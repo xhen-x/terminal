@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderComponent } from "@header/header.component";
 import { OptionButtonComponent } from '@option-button/option-button.component';
@@ -9,6 +9,7 @@ import { scrollbarService } from '@link-2500/link-2500-scrollbar.service'
   selector: 'app-s-8460370201',
   imports: [],
   templateUrl: './s-8460370201.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './s-8460370201.component.css'
 })
 export class S8460370201Component {

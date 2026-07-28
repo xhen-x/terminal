@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { pinService } from '@pin/pin.service';
 import {scrollbarService} from '@link-2500/link-2500-scrollbar.service'
 import { Router } from '@angular/router';
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-human-interface',
   imports: [],
   templateUrl: './human-interface.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './human-interface.component.css'
 })
 export class HumanInterfaceComponent {

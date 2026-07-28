@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet, Router } from "@angular/router";
 import { Subscription } from 'rxjs';
 import { pinService } from '../pin/pin.service';
@@ -9,6 +9,7 @@ import { PinpadComponent } from '../pin/pin.component';
   selector: 'app-Home',
   imports: [],
   templateUrl: './Home.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './Home.component.css'
 })
 export class HomeComponent implements OnInit {

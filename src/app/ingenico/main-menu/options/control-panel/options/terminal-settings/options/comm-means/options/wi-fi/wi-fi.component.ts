@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { HeaderComponent } from '@header/header.component';
 import { OptionButtonComponent } from "@option-button/option-button.component";
 
@@ -6,6 +6,7 @@ import { OptionButtonComponent } from "@option-button/option-button.component";
   selector: 'app-wi-fi',
   imports: [HeaderComponent, OptionButtonComponent],
   templateUrl: './wi-fi.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './wi-fi.component.css'
 })
 export class WiFiComponent {

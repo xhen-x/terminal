@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { pinService } from '@pin/pin.service';
 import { Router } from '@angular/router';
 import {scrollbarService} from '@link-2500/link-2500-scrollbar.service'
@@ -8,6 +8,7 @@ import { OptionButtonComponent } from "@option-button/option-button.component";
   selector: 'app-terminal-settings',
   imports: [HeaderComponent, OptionButtonComponent],
   templateUrl: './terminal-settings.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './terminal-settings.component.css'
 })
 export class TerminalSettingsComponent {

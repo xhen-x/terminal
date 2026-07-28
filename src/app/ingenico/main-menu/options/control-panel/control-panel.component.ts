@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren, ChangeDetectionStrategy } from '@angular/core';
 import { HeaderComponent } from "@header/header.component";
 import { OptionButtonComponent } from '@option-button/option-button.component';
 import { pinService } from '@pin/pin.service';
@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   selector: 'app-control-panel',
   imports: [HeaderComponent,OptionButtonComponent],
   templateUrl: './control-panel.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './control-panel.component.css'
 })
 export class ControlPanelComponent {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Router } from "@angular/router";
 import { HeaderComponent } from "../header/header.component";
@@ -8,6 +8,7 @@ import { pinService } from '../pin/pin.service';
   selector: 'app-F-menu',
   imports: [HeaderComponent],
   templateUrl: './f-menu.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './f-menu.component.css'
 })
 export class FMenuComponent implements OnInit{

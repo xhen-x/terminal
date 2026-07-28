@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, HostListener, ChangeDetectionStrategy } from '@angular/core';
 
 import { PinpadButton } from '../pin/pin-button-model';
 import { pinService } from './pin.service';
@@ -9,6 +9,7 @@ import { pinService } from './pin.service';
   templateUrl: './pin.component.html',
   styleUrl: './pin.component.css',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: []
 })
 export class PinpadComponent implements OnInit, OnDestroy {

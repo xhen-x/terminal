@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { pinService } from '../pin/pin.service';
 import { HeaderComponent } from "../header/header.component";
 
@@ -6,6 +6,7 @@ import { HeaderComponent } from "../header/header.component";
   selector: 'app-reboot',
   imports: [HeaderComponent],
   templateUrl: './reboot.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './reboot.component.css'
 })
 export class RebootComponent {

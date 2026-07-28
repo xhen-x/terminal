@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { HeaderComponent } from "@header/header.component";
 import { OptionButtonComponent } from "@option-button/option-button.component";
 import { pinService } from '@pin/pin.service';
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   selector: 'app-comm-means',
   imports: [HeaderComponent, OptionButtonComponent],
   templateUrl: './comm-means.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './comm-means.component.css'
 })
 export class CommMeansComponent {

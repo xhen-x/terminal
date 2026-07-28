@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, QueryList, ViewChildren, ElementRef, HostListener, ChangeDetectorRef, viewChild, ViewChild, OnInit } from '@angular/core';
+import { AfterViewInit, Component, QueryList, ViewChildren, ElementRef, HostListener, ChangeDetectorRef, viewChild, ViewChild, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { HeaderComponent } from "@header/header.component";
 import { OptionButtonComponent } from "@option-button/option-button.component";
 import { scrollbarService } from '@link-2500/link-2500-scrollbar.service'
@@ -11,6 +11,7 @@ import { pinService } from '@pin/pin.service';
   selector: 'app-main-menu',
   imports: [HeaderComponent,OptionButtonComponent],
   templateUrl: './main-menu.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './main-menu.component.css'
 })
 export class MainMenuComponent implements AfterViewInit, OnInit{

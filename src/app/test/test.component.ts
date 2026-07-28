@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { PinpadComponent } from "../ingenico/pin/pin.component";
 import { PinpadButton } from '../ingenico/pin/pin-button-model';
 
@@ -6,6 +6,7 @@ import { PinpadButton } from '../ingenico/pin/pin-button-model';
   selector: 'app-test',
   imports: [PinpadComponent],
   templateUrl: './test.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './test.component.css'
 })
 export class TestComponent {

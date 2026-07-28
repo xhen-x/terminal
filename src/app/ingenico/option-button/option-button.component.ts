@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { pinService } from '../pin/pin.service';
@@ -7,6 +7,7 @@ import { pinService } from '../pin/pin.service';
   selector: 'app-option-button',
   imports: [],
   templateUrl: './option-button.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './option-button.component.css'
 })
 export class OptionButtonComponent implements OnInit,OnDestroy{

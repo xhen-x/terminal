@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, viewChild, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, viewChild, ViewChild, ViewChildren, ChangeDetectionStrategy } from '@angular/core';
 import { HomeComponent } from '../ingenico/Home/Home.component';
 // import { Link2500PinpadComponent } from "../ingenico/Pinpad/Pinpad.component"
 import { RouterOutlet } from "@angular/router";
@@ -11,6 +11,7 @@ import { pinService } from '../ingenico/pin/pin.service';
   selector: 'app-link-2500',
   imports: [PinpadComponent,RouterOutlet,],
   templateUrl: './link-2500.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './link-2500.component.css'
 })
 export class Link2500Component implements OnInit,AfterViewInit{

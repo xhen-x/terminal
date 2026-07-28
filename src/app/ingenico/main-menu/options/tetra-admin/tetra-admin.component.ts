@@ -1,4 +1,4 @@
-import { Component , ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderComponent } from "@header/header.component";
 import { OptionButtonComponent } from '@option-button/option-button.component';
@@ -9,6 +9,7 @@ import { scrollbarService } from '@link-2500/link-2500-scrollbar.service'
   selector: 'app-tetra-admin',
   imports: [HeaderComponent, OptionButtonComponent],
   templateUrl: './tetra-admin.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './tetra-admin.component.css'
 })
 export class TetraAdminComponent {
